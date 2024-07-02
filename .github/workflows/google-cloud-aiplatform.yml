@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           mkdir python
-          pip install google-cloud-aiplatform -t python
+          pip install --upgrade --no-cache-dir google-cloud-aiplatform -t python
           # Remove unnecessary files
           find python -type d -name "tests" -exec rm -rf {} +
           find python -type d -name "__pycache__" -exec rm -rf {} +
