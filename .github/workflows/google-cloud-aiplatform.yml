@@ -14,7 +14,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'  # Specify the Python version you need
+          python-version: '3.12'  
 
       - name: Install dependencies
         run: |
@@ -22,7 +22,6 @@ jobs:
           pip install --upgrade --no-cache-dir google-cloud-aiplatform -t python
           # Remove unnecessary files
           find python -type d -name "tests" -exec rm -rf {} +
-          find python -type d -name "__pycache__" -exec rm -rf {} +
           # Zip the layer
           zip -r google-cloud-aiplatform.zip python
 
